@@ -1,15 +1,35 @@
 pipeline {
     agent any 
     stages {
-        stage('Stage 1') {
+        stage('Checkout') {
             steps {
-                echo 'Hello world!' 
+                echo 'Checking Out from Git' 
             }
         }
-        stage('Stage 2') {
+        stage('Code Analysis') {
             steps {
-                echo 'Hello Jenkins!' 
+                echo 'Code Analysis' 
             }
         }		
+        stage('Unit Testing') {
+            steps {
+                echo 'Unit Testing' 
+            }
+        }
+		stage('Packaging') {
+            steps {
+                echo 'Building Jar file' 
+            }
+        }
+        stage('Dockerization') {
+            steps {
+                echo 'Building docker image' 
+            }
+        }
+		stage('Deploy') {
+            steps {
+                echo 'Deploying to K8s' 
+            }
+        }
     }
 }
