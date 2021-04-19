@@ -1,11 +1,6 @@
 pipeline {
     agent any 
     stages {
-        stage('Checkout') {
-            steps {
-                echo 'Checking Out from Git' 
-            }
-        }
         stage('Code Analysis') {
             steps {
                 echo 'Code Analysis' 
