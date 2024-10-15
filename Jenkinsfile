@@ -16,6 +16,11 @@ pipeline {
                 echo 'Unit Testing' 
             }
         }
+	stage('Security Scanning') {
+            steps {
+                echo 'Security Vulnerability Scanning' 
+            } 
+	}
 	stage('Packaging') {
             steps {
                 echo 'Building Jar file' 
