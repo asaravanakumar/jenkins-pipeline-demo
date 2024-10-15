@@ -1,6 +1,11 @@
 pipeline {
     agent any 
     stages {
+	stage('Code Checkout') {
+            steps {
+                echo 'Check Out code from SCM' 
+            }
+        }    
         stage('Code Analysis') {
             steps {
                 echo 'Code Analysis updated' 
@@ -11,7 +16,7 @@ pipeline {
                 echo 'Unit Testing' 
             }
         }
-		stage('Packaging') {
+	stage('Packaging') {
             steps {
                 echo 'Building Jar file' 
             }
@@ -21,9 +26,9 @@ pipeline {
                 echo 'Building docker image' 
             }
         }
-		stage('Deploy') {
+	stage('Deploy') {
             steps {
-                echo 'Deploying to K8s' 
+                echo 'Deploying to K8s'     
             }
         }
     }
