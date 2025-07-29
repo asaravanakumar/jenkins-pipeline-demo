@@ -8,7 +8,7 @@ pipeline {
         }    
         stage('Code Analysis') {
             steps {
-                echo 'Code Analysis updated' 
+                echo 'Code Analysis' 
             }
         }		
         stage('Unit Testing') {
